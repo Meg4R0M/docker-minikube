@@ -3,5 +3,5 @@ ADD https://storage.googleapis.com/minikube/releases/v0.22.2/minikube-linux-amd6
 RUN chmod +x minikube
 
 FROM busybox:glibc
-COPY --from=0 minikube /
-ENTRYPOINT ["/minikube"]
+COPY --from=0 minikube /usr/local/bin/
+ENTRYPOINT ["/usr/local/bin/minikube"]
